@@ -1,0 +1,38 @@
+$color: blue;
+$border-color: green;
+$font-size: 1rem;
+
+div {
+    border: 1px red solid ;
+    width: 60vw;
+}
+
+h1 {
+    color: green;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    text-decoration-color: blue;
+    text-decoration-thickness: 0.1rem;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    text-align: center;
+}
+@mixin article-card($color, $border-color, $font-size) {
+    color: $color;
+    border: 1px $border-color solid;
+    padding: 10px;
+    font-size: $font-size;
+    &:nth-child(even) {color: red;}
+    width: 60vw;
+}
+article {
+    @include article-card($color, $border-color, $font-size)
+}
+.second-article {
+    @include article-card(green, green, 24px)
+}
